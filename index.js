@@ -25,16 +25,16 @@ app.get("/usuarios", async (req, res) => {
 
     let userSplit = _.partition(usuario, (users) => users.gender === "male");
 
-    const userGender = `
+    const userGender = `<ol>
       <h2>Mujeres: </h2>
-      <ol>
+ 
       ${userSplit[1].map((users) => {
         return `<li>Nombre: ${users.name} - Apellido: ${users.last} - ${users.gender} - ID: ${users.id} - Timestamp: ${users.fecha}</li>`;
       })}
-      <ol/>
+  
       
       <h2>Hombres: </h2>
-      <ol>
+
       ${userSplit[0].map((users) => {
         return `<li>Nombre: ${users.name} - Apellido: ${users.last} - ${users.gender} - ID: ${users.id} - Timestamp: ${users.fecha}</li>`;
       })}
